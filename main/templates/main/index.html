@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aayush Rathour | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background: #e2e8f0;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #667eea;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #667eea; }
+        }
+        
+        .floating { 
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0,  0px); }
+            50%  { transform: translate(0, 15px); }
+            100%   { transform: translate(0, -0px); }   
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-indigo-600">Aayush Rathour</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">Projects</a>
+                    <a href="#education" class="text-gray-700 hover:text-indigo-600 transition">Education</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Projects</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Education</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-yellow-300">Aayush Rathour</span></h1>
+                    <div class="typewriter text-2xl md:text-3xl mb-6">
+                        Aspiring Software Engineer & AI Enthusiast
+                    </div>
+                    <p class="text-lg mb-8">Building innovative solutions with Python, Web Development, and Machine Learning to create impactful technologies.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300">Hire Me</a>
+                        <a href="#projects" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-indigo-600 transition duration-300">View Work</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl floating">
+                        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Aayush Rathour" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">About Me</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Aayush Rathour" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Who am I?</h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm Aayush Rathour, an aspiring Software Engineer currently pursuing my B.Tech in Computer Science with specialization in AI & ML at Technocrats Institute of Technology, Bhopal. I'm passionate about building innovative solutions that solve real-world problems, particularly in the domains of AI, machine learning, and web development.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-user-tie text-indigo-600 mr-2"></i>
+                                <h4 class="font-medium text-gray-800">Full Name</h4>
+                            </div>
+                            <p class="text-gray-600">Aayush Rathour</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-map-marker-alt text-indigo-600 mr-2"></i>
+                                <h4 class="font-medium text-gray-800">Location</h4>
+                            </div>
+                            <p class="text-gray-600">Bhopal, Madhya Pradesh, India</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-envelope text-indigo-600 mr-2"></i>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                            </div>
+                            <p class="text-gray-600">aayushrathour34@gmail.com</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-phone text-indigo-600 mr-2"></i>
+                                <h4 class="font-medium text-gray-800">Phone</h4>
+                            </div>
+                            <p class="text-gray-600">+91 8770685206</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/aayushrathour" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                            <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                        </a>
+                        <a href="#" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
+                            <i class="fab fa-youtube mr-2"></i> YouTube
+                        </a>
+                        <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">My Skills</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Technical Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Python</span>
+                                <span class="text-gray-600">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">HTML5/CSS3</span>
+                                <span class="text-gray-600">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">JavaScript</span>
+                                <span class="text-gray-600">Basic</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Django</span>
+                                <span class="text-gray-600">Basic</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">AI & ML Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Machine Learning</span>
+                                <span class="text-gray-600">Basic</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">OpenCV</span>
+                                <span class="text-gray-600">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Azure</span>
+                                <span class="text-gray-600">Basic</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Data Structures</span>
+                                <span class="text-gray-600">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Soft Skills</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">Analytical Thinking</span>
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">Leadership</span>
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">Adaptability</span>
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">Team Collaboration</span>
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">Problem Solving</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">My Projects</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="BuggetB" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-store text-indigo-600 mr-2"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">BuggetB</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">A student-focused e-commerce platform for exchanging second-hand goods and offering rentals of educational products.</p>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-700 mb-1">Tech Stack:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">HTML5</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">CSS3</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">JavaScript</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">Django</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Completed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055227b30b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="AI Security Guard" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-shield-alt text-indigo-600 mr-2"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">AI Security Guard System</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">An ML-powered system that monitors night shift guards and detects intrusions or inactivity using camera feeds.</p>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-700 mb-1">Features:</h4>
+                            <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                <li>AI-Based Intrusion Detection</li>
+                                <li>Real-Time Alerts</li>
+                                <li>Night Vision Mode</li>
+                                <li>Analytics Dashboard</li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">In Progress</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" alt="Object Detection" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-eye text-indigo-600 mr-2"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">Object Detection System</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Built using Python and OpenCV to detect multiple objects in live video feeds with high accuracy.</p>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-700 mb-1">Tech Used:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">Python</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">OpenCV</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">Computer Vision</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Completed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Air Canvas" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-paint-brush text-indigo-600 mr-2"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">Air Canvas</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">A virtual canvas using finger tracking via OpenCV, enabling drawing in the air with hand gestures.</p>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-700 mb-1">Features:</h4>
+                            <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                <li>Real-time hand tracking</li>
+                                <li>Multiple color options</li>
+                                <li>Gesture-based controls</li>
+                                <li>Save/Reset functionality</li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Completed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="YouTube Channel" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <i class="fab fa-youtube text-indigo-600 mr-2"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">Tech & English YouTube</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Teaching how to speak English easily and sharing daily tech progress, startup journey, and AI/ML learning content.</p>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-700 mb-1">Content Types:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">Tech Tutorials</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">English Lessons</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">Startup Journey</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded">AI/ML Updates</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Channel</a>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=755&q=80" alt="Startup Journey" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-rocket text-indigo-600 mr-2"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">1-Month Startup Challenge</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Building dream projects in 1 month with daily updates via short videos on AI/ML and startup growth.</p>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-700 mb-1">Focus Areas:</h4>
+                            <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                <li>Student-focused innovations</li>
+                                <li>AI/ML applications</li>
+                                <li>Sustainable solutions</li>
+                                <li>Community building</li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Follow Journey</a>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">In Progress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Section -->
+    <section id="education" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Education & Achievements</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Education Timeline -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-graduation-cap text-indigo-600 mr-3"></i> Education
+                    </h3>
+                    
+                    <div class="space-y-8 relative">
+                        <!-- Education 1 -->
+                        <div class="timeline-item relative pl-8">
+                            <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-indigo-600 border-4 border-indigo-100"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h4 class="text-lg font-semibold text-gray-800">B.Tech – Computer Science (AI & ML)</h4>
+                                <p class="text-indigo-600 mb-2">Technocrats Institute of Technology, Bhopal</p>
+                                <p class="text-gray-600">Ongoing - 3rd Year</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Education 2 -->
+                        <div class="timeline-item relative pl-8">
+                            <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-indigo-600 border-4 border-indigo-100"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h4 class="text-lg font-semibold text-gray-800">Senior Secondary (Class XII)</h4>
+                                <p class="text-indigo-600 mb-2">Bal Bharati Public School, MB Anuppur</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Education 3 -->
+                        <div class="timeline-item relative pl-8">
+                            <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-indigo-600 border-4 border-indigo-100"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h4 class="text-lg font-semibold text-gray-800">Secondary (Class X)</h4>
+                                <p class="text-indigo-600 mb-2">Bal Bharati Public School, MB Anuppur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications & Achievements -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-trophy text-indigo-600 mr-3"></i> Certifications & Achievements
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Certification 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-certificate text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">Artificial Intelligence Fundamentals</h4>
+                                    <p class="text-indigo-600">Google</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Certification 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-certificate text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">Microsoft Azure Fundamentals AZ-900</h4>
+                                    <p class="text-indigo-600">Microsoft</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Achievement 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-star text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">Competitive Programming</h4>
+                                    <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                                        <li>CodeChef: 2⭐ with 500+ problems solved</li>
+                                        <li>Geeks for Geeks: 3⭐ with 250+ DSA problems solved</li>
+                                        <li>Qualified: TCS CodeVita Season 12</li>
+                                        <li>Participant in Smart India Hackathon 2024</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Get In Touch</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Contact Information</h3>
+                    <p class="text-gray-600 mb-6">Feel free to reach out to me for collaborations, job opportunities, or just to say hello!</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <p class="text-gray-600">aayushrathour34@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Phone</h4>
+                                <p class="text-gray-600">+91 8770685206</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Location</h4>
+                                <p class="text-gray-600">Bhopal, Madhya Pradesh, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-medium text-gray-800 mb-3">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/aayushrathour" target="_blank" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-gray-800 text-white p-3 rounded-full hover:bg-gray-900 transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">Aayush Rathour</h3>
+                    <p class="text-gray-400">Aspiring Software Engineer & AI Enthusiast</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Aayush Rathour. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
